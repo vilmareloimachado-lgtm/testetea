@@ -13,7 +13,10 @@ class UsuarioService:
  
         if not nome: 
             raise ValueError("O nome não pode ficar vazio.") 
- 
+        if len(nome) < 3: 
+            raise ValueError( 
+                "O nome precisa ter pelo menos 3 caracteres." 
+            )
         if estilo_instrucao not in {"direto", "detalhado"}: 
             raise ValueError( 
                 "O estilo deve ser 'direto' ou 'detalhado'." 
